@@ -6,6 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <title>Menu público</title>
 </head>
 
@@ -21,8 +22,28 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a href="index.php" class="navbar navbar-brand"></a>
+                <a href="index.php" class="navbar navbar-brand">
+                    <img src="" alt="Logotipo Chuleta Quente">
+                </a>
+            </div> 
+            <!-- fecha Agrupamento mobile -->
+            <!-- nav direita -->
+            <div class="collapse navbar-collapse" id="menu-publico">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active">
+                        <a href="index.php">
+                            <span class="glyphicon glyphicon-home"></span>
+                        </a>
+                    </li>
+
+                    <li><a href=""></a></li>
+                    <li><a href=""></a></li>
+                    <li><a href=""></a></li>
+                    <li><a href=""></a></li>
+                    <li><a href=""></a></li>
+                </ul>
             </div>
+            <!-- fim nav direita -->
         </div>
     </nav>
 </body>
