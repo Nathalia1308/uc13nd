@@ -1,41 +1,37 @@
-<?php
-
-?>
-
+<?php ?>
 <!DOCTYPE html>
-<html lang="pt-BR">
 
 <head>
+    <html lang="pt-BR">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- link para css bootstrap -->
+    <title>Sistema produtos</title>
+    <!-- link para CSS bootstrap -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <!-- link para css personalizado/próprio -->
-    <link rel="stylesheet" href="estilo.css">
-    <title>Sistema Produtos</title>
+    <link rel="stylesheet" href="css/estilo.css">
 </head>
 
 <body class="fundofixo">
-    <!-- Área de menu -->
+    <!-- Àrea de menu -->
     <?php include 'menu_publico.php'; ?>
     <a name="home">&nbsp;</a>
     <main class="container">
         <!-- Area do carroussel -->
-        <?php include "carousel.php"; ?>
-        <!-- Área de destaques -->
+        <?php include 'carousel.php'; ?>
+        <!-- Area de destaques -->
         <a name="destaques">&nbsp;</a>
-        <?php include "produtos_destaque.php"; ?>
-        <!-- Area dos produtos em geral -->
-        <?php include "produtos_geral.php"; ?>
+        <?php include 'produtos_destaque.php'; ?>
+        <!-- Àrea dos produtos em geral -->
+        <?php include 'produtos_geral.php'; ?>
 
         <!-- Rodapé -->
         <footer class="panel-footer" style="background: none;">
-            <?php include "rodape.php"; ?>
+            <?php include 'rodape.php'; ?>
             <a name="contato">&nbsp;</a>
         </footer>
     </main>
 </body>
-
 <!-- Link arquivos Bootstrap js -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>

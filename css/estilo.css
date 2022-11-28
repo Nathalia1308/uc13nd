@@ -1,0 +1,13 @@
+@charset "utf8";
+
+/* CSS Document */
+
+.fundofixo{
+    background: url('../images/bg_fogo.jpg') no-repeat fixed;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+
+.fundo-rodape{
+    background-color: rgba(255,255,255,0.8);
+}
