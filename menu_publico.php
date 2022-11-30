@@ -29,8 +29,8 @@ $rows_tipos = $lista_tipos->fetch_all();
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a href="index.php" class="navbar-brand">
-                    <img src="" alt="Logotipo Chuleta Quente">
+                <a href="index.php" class="navbar navbar-brand">
+                    <img src="images/logo3.png" alt="Logotipo Chuleta Quente">
                 </a>
              </div> 
              <!-- fecha Agrupamento mobile -->
@@ -52,6 +52,7 @@ $rows_tipos = $lista_tipos->fetch_all();
                         </a>
                         <ul class="dropdown-menu">
                             <?php foreach($rows_tipos as $row){?>
+                            <!-- <li><a href="produtos_geral.php">Bebidas</a></li> -->
                             <li><a href="produtos_por_tipo.php?id_tipo=<?php echo $row['0']; ?>"><?php echo $row['2']; ?></a></li>
                           <?php }?>  
                         </ul>
