@@ -40,7 +40,7 @@ $num_linhas = $lista->num_rows;
                             </button>
                             <a href="produto_detalhe.php?id_produto=<?php echo $row_destaque['id_produto']; ?>">
                                 <span class="hidden-xs">Saiba mais...</span>
-                                <span class="visible-xs glhyphicon glhyphicon-eye-open" aria-hidden="true"></span>
+                                <span class="hidden-xs glyphicon glyphicon-eye-open" aria-hidden="true"></span>
                             </a>
                         </p>
                     </div>
