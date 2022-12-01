@@ -1,10 +1,10 @@
-<?php 
+<?php
 include "conn/connect.php";
-$lista_tipos= $conn->query('select * from tbtipos order by rotulo_tipo');
+$lista_tipos = $conn->query('select * from tbtipos order by rotulo_tipo');
 // busca uma linha semantica do banco de dados
 // $row_tipos = $lista_tipos->fetch_assoc(); 
 // busca todos os resultados do banco de dados
-$rows_tipos = $lista_tipos->fetch_all(); 
+$rows_tipos = $lista_tipos->fetch_all();
 
 ?>
 <!DOCTYPE html>
@@ -29,13 +29,13 @@ $rows_tipos = $lista_tipos->fetch_all();
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a href="index.php" class="navbar-brand">
-                    <img src="" alt="Logotipo Chuleta Quente">
+                <a href="index.php" class="navbar navbar-brand">
+                    <img src="images/logo3.png" alt="Logotipo Chuleta Quente">
                 </a>
-             </div> 
-             <!-- fecha Agrupamento mobile -->
-             <!-- Nav direita -->
-             <div class="collapse navbar-collapse" id="menu-publico">
+            </div>
+            <!-- fecha Agrupamento mobile -->
+            <!-- Nav direita -->
+            <div class="collapse navbar-collapse" id="menu-publico">
                 <ul class="nav navbar-nav navbar-right">
                     <li class="active">
                         <a href="index.php">
@@ -51,9 +51,10 @@ $rows_tipos = $lista_tipos->fetch_all();
                             <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
-                            <?php foreach($rows_tipos as $row){?>
-                            <li><a href="produtos_por_tipo.php?id_tipo=<?php echo $row['0']; ?>"><?php echo $row['2']; ?></a></li>
-                          <?php }?>  
+                            <?php foreach ($rows_tipos as $row) { ?>
+                                <!-- <li><a href="produtos_geral.php">Bebidas</a></li> -->
+                                <li><a href="produtos_por_tipo.php?id_tipo=<?php echo $row['0']; ?>"><?php echo $row['2']; ?></a></li>
+                            <?php } ?>
                         </ul>
                     </li>
                     <!-- fim dropdown -->
@@ -62,7 +63,7 @@ $rows_tipos = $lista_tipos->fetch_all();
                     <form action="produtos_busca.php" method="get" name="form-busca" id="form-busca" class="navbar-form navbar-left" role="search">
                         <div class="form-group">
                             <div class="input-group">
-                                <input type="search" name="buscar" id="buscar" size="9"  class="form-control" aria-label="search" placeholder="Buscar produto" required>
+                                <input type="search" name="buscar" id="buscar" size="9" class="form-control" aria-label="search" placeholder="Buscar produto" required>
                                 <div class="input-group-btn">
                                     <button type="submit" class="btn btn-default">
                                         <span class="glyphicon glyphicon-search"></span>
@@ -78,11 +79,12 @@ $rows_tipos = $lista_tipos->fetch_all();
                         </a>
                     </li>
                 </ul>
-             </div>
-             <!-- fim Nav direita -->
+            </div>
+            <!-- fim Nav direita -->
         </div>
     </nav>
 </body>
 <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
 </html>
-<h1>Meu menu</h1>
+<h1></h1>
