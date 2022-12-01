@@ -1,8 +1,10 @@
-<?php 
-
-
-
-?>
+<!-- <?php 
+// $idProduto = $_GET['id_produto'];
+// include "conn/connect.php";
+// $listaProduto = $conn->query("select * from vw_tbprodutos where id_produto = $idProduto");
+// $rowsGeral = $listaProduto->fetch_all();
+// $num_rows = 
+// ?>
 
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -14,4 +16,4 @@
 <body>
     
 </body>
-</html>
+</html> -->
