@@ -76,8 +76,6 @@ $numRows = $listaPorTipo->num_rows;
         <?php } ?>
         <footer>
             <?php include "rodape.php" ?>
-
-
         </footer>
     </div>
 </body>

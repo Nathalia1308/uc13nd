@@ -23,6 +23,7 @@
         <a name="destaques">&nbsp;</a>
         <?php include 'produtos_destaque.php'; ?>
         <!-- Àrea dos produtos em geral -->
+        <a name="produtos">&nbsp;</a>
         <?php include 'produtos_geral.php'; ?>
 
         <!-- Rodapé -->
