@@ -61,7 +61,7 @@ ALTER TABLE `tbtipos`
 CREATE TABLE `tbusuarios` (
   `id_usuario` int(11) NOT NULL,
   `login_usuario` varchar(30) NOT NULL,
-  `senha_usuario` varchar(8) NOT NULL,
+  `senha_usuario` varchar(32) NOT NULL, -- md5 - base64
   `nivel_usuario` ENUM('sup','com') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
