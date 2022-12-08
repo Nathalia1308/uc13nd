@@ -5,6 +5,8 @@ include "../conn/connect.php";
 $lista = $conn->query("select * from vw_tbprodutos"); // orde by (tipo, destaque, etc)
 $row = $lista->fetch_assoc();
 $nrows = $lista->num_rows;
+
+
 ?>
 
 <!DOCTYPE html>
@@ -109,18 +111,24 @@ $nrows = $lista->num_rows;
     </div>
     <!-- fim do modal  -->
 </body>
+
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="../js/bootstrap.min.js"></script>
 <script type="text/javascript">
-    $('.delete').on('click',function(){
+    $('.delete').on('click', function() {
         var nome = $(this).data('nome'); // busca o nome com a descrição (data-nome)
         var id = $(this).data('id'); // busca o id (data-id)
         // console.log(id + '-' + nome)  // exibe no console
         $('span.nome').text(nome); // insere o nome do item na confirmação
-        $('a.delete-yes').attr('href','produtos_excluir.php?id_produto='+id); //chama o arquivo php para excluir o produto
+        $('a.delete-yes').attr('href', 'produtos_excluir.php?id_produto=' + id); //chama o arquivo php para excluir o produto
         $('#modalEdit').modal('show'); //chama o modal
     });
 </script>
-
+<?php
+if (isset($_GET['error'])) {
+    echo "<script>window.alert('Falha ao remover produto!!')</script>";
+}
+?>
 
 </html>
