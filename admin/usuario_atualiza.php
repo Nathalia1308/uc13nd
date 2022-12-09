@@ -123,7 +123,7 @@ $totalRows_fk   =   ($lista_fk)->num_rows;
                         <label for="senha_usuario">Digite a senha:</label>
                         <div class="input-group">
                             <span class="input-group-addon">
-                                <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                                <span class="glyphicon glyphicon-lock" aria-hidden="true"></span>
                             </span>
                             <input type="text" name="senha_usuario" id="senha_usuario" class="form-control" placeholder="Digite a senha." maxlength="50" required value="<?php echo $row['senha_usuario']; ?>">
                         </div>
