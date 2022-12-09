@@ -2,13 +2,13 @@
 include "acesso_com.php";
 include "../conn/connect.php";
 
-$lista = $conn->query("select * from tbtipos");
+$lista = $conn->query("select * from tbtipos"); // orde by (tipo, destaque, etc) se quiser 
 $row = $lista->fetch_assoc();
 $nrows = $lista->num_rows;
 ?>
 
 <!DOCTYPE html>
-<html lang="pt_BR">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
@@ -28,6 +28,7 @@ $nrows = $lista->num_rows;
             <thead>
                 <th class="hidden">ID</th>
                 <th>Tipos</th>
+                <th>Sigla</th>
                 <th>
                     <a href="tipos_insere.php" target="_self" class="btn btn-block btn-primary btn-xs" role="button">
                         <span class="hidden-xs">ADICIONAR</span>
@@ -40,16 +41,32 @@ $nrows = $lista->num_rows;
                     <!-- inicioda estrutura de repetição  -->
                     <tr>
                         <td class="hidden"><?php echo $row['id_produto']; ?></td>
+
+
                         <td>
                             <span class="visible-xs" <?php echo $row['sigla_tipo']; ?>role="button" class="btn btn-warning btn-block btn-xs"></span>
                             <span class="hidden-xs"><?php echo $row['rotulo_tipo']; ?></span>
+                        </td>
+                        <td>
+                            <?php
+                            if ($row['sigla_tipo'] == 'beb') {
+                                echo '<span class="	glyphicon glyphicon-glass text-warning" aria-hidden="true"></span>';
+                            }
+                            if ($row['sigla_tipo'] == 'sob') {
+                                echo '<span class="glyphicon glyphicon-ice-lolly-tasted" aria-hidden="true"></span>';
+                            } 
+                            if ($row['sigla_tipo']== 'chu'){
+                                echo '<span class="glyphicon glyphicon-apple text-danger" aria-hidden="true"></span>';
+                            }
+                            ?>
+                            <?php echo $row['sigla_tipo']; ?>
                         </td>
                         <td>
                             <a href="tipos_atualiza.php?id_tipo=<?php echo $row['id_tipo']; ?>" role="button" class="btn btn-warning btn-block btn-xs">
                                 <span class="hidden-xs">ALTERAR</span>
                                 <span class="glyphicon glyphicon-refresh"></span>
                             </a>
-                            <button data-nome="<?php echo $row['rotulo_tipo']; ?>" role="button" class="delete btn btn-xs btn-block btn-danger">
+                            <button data-nome="<?php echo $row['rotulo_tipo']; ?>" data-id=<?php echo $row['id_tipo']; ?> role="button" class="delete btn btn-xs btn-block btn-danger">
                                 <span class="hidden-xs">EXCLUIR</span>
                                 <span class="glyphicon glyphicon-trash"></span>
                             </button>
@@ -70,14 +87,14 @@ $nrows = $lista->num_rows;
                     </button>
                 </div>
                 <div class="modal-body">
-                    Deseja mesmo excluir o item? 
+                    Deseja mesmo excluir o usuario?
                     <h4><span class="nome text-danger"></span></h4>
                 </div>
                 <div class="modal-footer">
                     <a href="#" type="button" class="btn btn-danger delete-yes">
                         Confirmar
                     </a>
-                    <button class="btn btn-success" data-dismiss="modal">
+                    <button class="btn btn-success" data-dismiss="modaç">
                         Cancelar
                     </button>
                 </div>
@@ -89,13 +106,14 @@ $nrows = $lista->num_rows;
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="../js/bootstrap.min.js"></script>
 <script type="text/javascript">
-    $('.delete').on('click',function(){
+    $('.delete').on('click', function() {
         var nome = $(this).data('nome'); // busca o nome com a descrição (data-nome)
         var id = $(this).data('id'); // busca o id (data-id)
         // console.log(id + '-' + nome)  // exibe no console
         $('span.nome').text(nome); // insere o nome do item na confirmação
-        $('a.delete-yes').attr('href','produtos_excluir.php?id_produto='+id); //chama o arquivo php para excluir o produto
-        $('#modalEdit').modal('show'); //chama o modal
+        $('a.delete-yes').attr('href', 'tipos_excluir.php?id_tipo=' + id); //chama o arquivo php para excluir o produto
+        $('#modalEdit').modal('show'); //chama o modal 
     });
 </script>
+
 </html>

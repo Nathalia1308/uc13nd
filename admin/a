@@ -57,8 +57,6 @@ $totalRows_fk   =   ($lista_fk)->num_rows;
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tipos - Atualiza</title>
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/meu_estilo.css" type="text/css">
 </head>
 
 <body class="fundofixo">
@@ -77,7 +75,6 @@ $totalRows_fk   =   ($lista_fk)->num_rows;
                     Atualizar Tipo
                 </h2>
                 <!-- abre thumbnail -->
-
                 <div class="thumbnail">
                     <div class="alert alert-danger" role="alert">
                         <form action="tipos_atualiza.php" id="form_tipo_atuliaza" name="form_tipo_atualiza" method="post" enctype="multipart/form-data">
@@ -110,31 +107,20 @@ $totalRows_fk   =   ($lista_fk)->num_rows;
                                     <!-- Fecha estrutura de repetição -->
                                 </select>
                             </div><!-- fecha input-group -->
-                            <br>
-                            <label for="sigla_tipo">Sigla:</label>
-                            <div class="input-group">
-                                <label for="lista_tipos_c" class="radio-inline">
-                                    <input type="radio" name="sigla_tipo" id="sigla_tipo" value="chu" <?php echo $row['sigla_tipo'] == "chu" ? "checked" : null; ?>>Chu
-                                </label>
-                                <label for="sigla_tipo_b" class="radio-inline">
-                                    <input type="radio" name="sigla_tipo" id="sigla_tipo" value="Beb" <?php echo $row['sigla_tipo'] == "Beb" ? "checked" : null; ?>>Beb
-                                </label>
-                                    <label for="sigla_tipo_s" class="radio-inline">
-                                        <input type="radio" name="sigla_tipo" id="sigla_tipo" value="sob" <?php echo $row['sigla_tipo'] == "sob" ? "checked" : null; ?>>Sob 
-                                    </label>
-                                </label>
-                            </div>
-                        <!-- btn enviar -->
-                        <input type="submit" value="Atualizar" name="enviar" id="enviar" class="btn btn-danger btn-block">
-                    </form>
-                </div><!-- Fecha alert -->
-            </div><!-- Fecha thumbnail -->
-        </div><!-- Fecha Dimensionamento -->
-    </div><!-- Fecha row -->
-</main>
+                        </form>
+                    </div>
+                </div>
+                <!-- btn enviar -->
+                <input type="submit" value="Atualizar" name="enviar" id="enviar" class="btn btn-danger btn-block">
+                </form>
+            </div><!-- Fecha alert -->
+        </div><!-- Fecha thumbnail -->
+        </div><!-- Fecha row -->
+    </main>
 
-</script>
+    </main>
 
+</body>
 <!-- Link arquivos Bootstrap js -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="../js/bootstrap.min.js"></script>
@@ -144,4 +130,4 @@ $totalRows_fk   =   ($lista_fk)->num_rows;
     mysqli_free_result($lista_fk);
     mysqli_free_result($lista);
 ?>
-
+</html>

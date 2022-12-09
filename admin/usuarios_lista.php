@@ -28,10 +28,10 @@ $nrows = $lista->num_rows;
             <thead>
                 <th class="hidden">ID</th>
                 <th>LOGIN DO USUARIO</th>
-                <th>SENHA DO USUARIO</th>
+                <th class="hidden">SENHA DO USUARIO</th>
                 <th>NIVEL DE USUARIO</th>
                 <th>
-                    <a href="usuario_insere.php" target="_self" class="btn btn-block btn-primary btn-xs" role="button">
+                    <a href="usuarios_insere.php" target="_self" class="btn btn-block btn-primary btn-xs" role="button">
                         <span class="hidden-xs">ADICIONAR</span>
                         <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                     </a>
@@ -47,11 +47,18 @@ $nrows = $lista->num_rows;
                             <span class="hidden-xs"><?php echo $row['login_usuario']; ?></span>
                         </td>
                         <td>
-                            <?php echo $row['senha_usuario']; ?>
-                        </td>
-                        <td>
+                            <?php 
+                            if ($row['nivel_usuario'] == 'sup') {
+                                echo '<span class="glyphicon glyphicon-link text-danger" aria-hidden="true"></span>';
+                            }else {
+                                echo '<span class="glyphicon glyphicon-globe text-info" aria-hidden="true"></span>';
+                            }
+                            ?> 
                             <?php echo $row['nivel_usuario']; ?>
                         </td>
+                        <td class="hidden">
+                            <?php echo $row['senha_usuario']; ?>
+                        </td>    
                         <td>
                             <a href="usuario_atualiza.php?id_usuario=<?php echo $row['id_usuario']; ?>" role="button" class="btn btn-warning btn-block btn-xs">
                                 <span class="hidden-xs">ALTERAR</span>
@@ -100,7 +107,7 @@ $nrows = $lista->num_rows;
         var id = $(this).data('id'); // busca o id (data-id)
         // console.log(id + '-' + nome)  // exibe no console
         $('span.nome').text(nome); // insere o nome do item na confirmação
-        $('a.delete-yes').attr('href','produtos_excluir.php?id_produto='+id); //chama o arquivo php para excluir o produto
+        $('a.delete-yes').attr('href','usuarios_excluir.php?id_usuario='+id); //chama o arquivo php para excluir o produto
         $('#modalEdit').modal('show'); //chama o modal
     });
 </script>
