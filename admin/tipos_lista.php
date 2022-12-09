@@ -94,7 +94,7 @@ $nrows = $lista->num_rows;
         var id = $(this).data('id'); // busca o id (data-id)
         // console.log(id + '-' + nome)  // exibe no console
         $('span.nome').text(nome); // insere o nome do item na confirmação
-        $('a.delete-yes').attr('href','tipos_excluir.php?id_produto='+id); //chama o arquivo php para excluir o produto
+        $('a.delete-yes').attr('href','tipos_excluir.php?id_tipo='+id); //chama o arquivo php para excluir o produto
         $('#modalEdit').modal('show'); //chama o modal
     });
 </script>
