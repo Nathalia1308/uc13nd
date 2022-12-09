@@ -1,4 +1,4 @@
-<?php 
+<?php
 include 'conn/connect.php';
 $lista = $conn->query("select * from vw_tbprodutos where destaque_produto = 'sim' ");
 $row_destaque = $lista->fetch_assoc();
@@ -7,11 +7,13 @@ $num_linhas = $lista->num_rows;
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Produtos</title>
 </head>
+
 <body>
     <?php if($num_linhas>0){ ?>
         <h2 class="breadcrumb alert-danger"><strong>Destaques</h2>
